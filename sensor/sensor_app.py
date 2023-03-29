@@ -40,6 +40,6 @@ print("\tMaximum: {0}, Minimum: {1} temperatures".format(max(recs), min(recs)))
 # Module 5 code here:
 humidity_data = HumidityData(data)
 
-recs = humidity_data.get_data_by_area(rec_area=test_area)
+recs = humidity_data.get_data_by_area("humidity",rec_area=test_area)
 print("\nHouse Humidity sensor records for area {} = {}".format(test_area, len(recs)))
 print("\tAverage: {} humidity".format(mean(recs)))
