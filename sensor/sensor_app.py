@@ -7,6 +7,7 @@ from temperature_info import TemperatureData
 from humidity_info import HumidityData
 from statistics import mean
 from particle_count_info import ParticleData
+from energy_info import EnergyData
 
 ##############################
 # Do not remove these two lines
@@ -66,3 +67,13 @@ concentrations=particle_data.get_data_concentrations(data=recs)
 print("\tGood Air Quality Recs: {}".format(concentrations["good"]))
 print("\tModerate Air Quality Recs: {}".format(concentrations["moderate"]))
 print("\tBad Air Quality Recs: {}".format(concentrations["bad"]))
+
+EnergyData=EnergyData(data)
+
+recs=EnergyData.get_data_by_area(recs_area=test_area)
+print("\nHouse Energy sensor records for area {} = {}".format(test_area, len(recs)))
+
+total_energy=EnergyData.calculate_energy_usage(data=recs)
+print("\tEnergy Usage: {:2.2} Watts".format(total_energy))
+
+     
