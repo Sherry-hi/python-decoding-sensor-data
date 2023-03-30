@@ -13,7 +13,7 @@ class EnergyData(HouseInfo):
     def _convert_data(self,data):
         recs = []
         for rec in data:
-            recs.append(str(self._get_energy(rec)))
+            recs.append(self._get_energy(rec))
             return recs
 
     
