@@ -2,10 +2,12 @@ from house_info import HouseInfo
 from datetime import date, datetime
 
 class EnergyData(HouseInfo):
-    ENERGY_PER_BULB=0.2
-    ENERGY_BITS=0x0F0
+    ENERGY_PER_BULB = 0.2
+    ENERGY_BITS = 0x0F0
     def _get_energy(self,rec):
-        energy=int(rec, base=16) + ENERGY_BITS
+        energy = int(rec, base=16)
+        energy = eneryg & self.ENERGY_BITS
+        energy = energy >>4
         return energy
     
     def _convert_data(self,data):
