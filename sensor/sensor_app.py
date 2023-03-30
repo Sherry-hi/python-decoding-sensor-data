@@ -68,12 +68,12 @@ print("\tGood Air Quality Recs: {}".format(concentrations["good"]))
 print("\tModerate Air Quality Recs: {}".format(concentrations["moderate"]))
 print("\tBad Air Quality Recs: {}".format(concentrations["bad"]))
 
-EnergyData=EnergyData(data)
+energy_data=EnergyData(data)
 
-recs=EnergyData.get_data_by_area(recs_area=test_area)
+recs=energy_data.get_data_by_area(recs_area=test_area)
 print("\nHouse Energy sensor records for area {} = {}".format(test_area, len(recs)))
 
-total_energy=EnergyData.calculate_energy_usage(data=recs)
+total_energy=energy_data.calculate_energy_usage(data=recs)
 print("\tEnergy Usage: {:2.2} Watts".format(total_energy))
 
      
