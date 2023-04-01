@@ -70,9 +70,10 @@ print("\tBad Air Quality Recs: {}".format(concentrations["bad"]))
 
 energy_data=EnergyData(data)
 recs = energy_data.get_data_by_area(recs_area=test_area)
-recs = energy_data.get_data_by_date(recs_date=test_date)
+
 total_energy=energy_data.calculate_energy_usage(data=recs)
 print("\nHouse Energy sensor records for area {} = {}".format(test_area, len(recs)))
+recs = energy_data.get_data_by_date(recs_date=test_date)
 print("\nHouse Energy sensor records for date: {} = {}".format( test_date.strftime("%m/%d/%y"), len(recs)))
 print("\tEnergy Usage: {:2.2} Watts".format(total_energy))
 
